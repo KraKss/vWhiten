@@ -54,7 +54,6 @@ function openMenu()
                                 Config.PercentagePannel = Config.PercentagePannel + 0.000004
                             else
                                 local FinalPercentage = Round(SliderPannel.Index * Config.Percentage)
-                                ClearPedTasks(PlayerPedId())
                                 FreezeEntityPosition(PlayerPedId(), false)                                                        
                                 TriggerServerEvent('kWhiten', FinalPercentage, SliderPannel.Index) 
                                 Config.PercentagePannel = 0.0
