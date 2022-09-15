@@ -6,6 +6,8 @@ description "Blanchisseur by KraKss"
 
 version "1.0"
 
+lua54 "on"
+
 server_scripts {
 	"@es_extended/locale.lua",
 	"sv.lua"
