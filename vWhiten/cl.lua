@@ -1,10 +1,6 @@
-ESX = nil
+local ESX = nil
 local menu = false
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
-local mainMenu = RageUI.CreateMenu("Blanchisseur", "Blanchissement") 
-mainMenu.EnableMouse = true
-mainMenu:DisplayPageCounter(false)
 
 local SliderPannel = {
     Minimum = 0,
@@ -17,6 +13,13 @@ mainMenu.Closed = function()
 end
 
 function openMenu()
+    if (menu) then
+        return
+    end
+    local mainMenu <const> = RageUI.CreateMenu("Blanchisseur", "Blanchissement") 
+    mainMenu.EnableMouse = true
+    mainMenu:DisplayPageCounter(false)
+    
     if menu then menu = false RageUI.Visible(mainMenu, false)
     else menu = true RageUI.Visible(mainMenu, true)
         CreateThread(function()
